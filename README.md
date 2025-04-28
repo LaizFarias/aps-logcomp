@@ -1,1 +1,54 @@
 # aps-logcomp
+
+
+# DayLanguage
+Linguagem para programar tarefas diárias.
+
+Vídeo: https://youtu.be/pE6zjqpH7S0
+
+## EBNF 
+DAY = 'day' '{' STATEMENT_LIST '}';
+
+STATEMENT_LIST = { STATEMENT };
+
+STATEMENT = ASSIGNMENT_STATEMENT | TASK_STATEMENT | FLOW_STATEMENT;
+
+ASSIGNMENT_STATEMENT = IDENTIFIER '=' EXPRESSION ';';
+
+TASK_STATEMENT = IDENTIFIER [ '(' PARAMETER_LIST ')' ] ';';
+
+FLOW_STATEMENT = IF_STATEMENT | REPEAT_STATEMENT;
+
+IF_STATEMENT = 'if' CONDITION '{' STATEMENT_LIST '}';
+
+REPEAT_STATEMENT = 'repeat' NUMBER 'times' '{' STATEMENT_LIST '}';
+
+CONDITION = EXPRESSION COMPARISON_OPERATOR EXPRESSION;
+
+COMPARISON_OPERATOR = '>' | '<' | '==' | '!=' | '>=' | '<=';
+
+EXPRESSION = NUMBER | STRING | IDENTIFIER;
+
+PARAMETER_LIST = PARAMETER { ',' PARAMETER };
+
+PARAMETER = IDENTIFIER '=' EXPRESSION;
+
+IDENTIFIER = LETTER { LETTER | DIGIT | '_' };
+
+NUMBER = DIGIT { DIGIT };
+
+STRING = '"' { ANY_CHARACTER - '"' } '"';
+
+LETTER = 'a' | ... | 'z' | 'A' | ... | 'Z';
+
+DIGIT = '0' | ... | '9';
+
+ANY_CHARACTER = qualquer caractere;
+
+
+
+## Autoria
+
+Por  Ana Laiz 
+
+
